@@ -21,6 +21,9 @@
     <ClCompile Include="..\..\MenuTest\MenuTest\ProgramMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="EddsDecoder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="EDDS_Data_Decoding_Procedure.pptx" />
@@ -28,6 +31,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\MenuTest\MenuTest\ProgramMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EddsDecoder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -6,6 +6,11 @@
 #include <conio.h>
 #include <stdio.h>
 #include <locale.h>
+#include "EddsDecoder.h"
+
+CProgramMenu mainMenu;
+CEddsDecoder eddsDecoder;
+
 
 
 void GetFileName(char *pFileName, int sizeFileName)
@@ -18,9 +23,13 @@ void GetFileName(char *pFileName, int sizeFileName)
 	printf("Írja be a fájl nevét: ");
 	InputStr(pFN, 256);
 
-	printf("Kovács Gábor\n");
-
-
+	if (eddsDecoder.SetFilename(pFN)==0) {
+		printf("\nA fájl megadva: %s\n", pFN);
+		strncpy_s(pFileName, sizeFileName, pFN, sizeFileName);
+	}
+	else {
+		printf("\nHiba a fájl megadásakor!\n");
+	}
 
 	_getch();
 }
@@ -31,8 +40,6 @@ void GetFileName(char *pFileName, int sizeFileName)
 
 int main()
 {
-	CProgramMenu mainMenu;
-
 	char pFileName[256] = "";
 	double dbl;
 	int menuSelected = -1;

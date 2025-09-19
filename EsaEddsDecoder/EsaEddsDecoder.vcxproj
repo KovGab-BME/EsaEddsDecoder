@@ -124,6 +124,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\MenuTest\MenuTest\ProgramMenu.cpp" />
+    <ClCompile Include="EddsDecoder.cpp" />
     <ClCompile Include="EsaEddsDecoder.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -132,6 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\MenuTest\MenuTest\ProgramMenu.h" />
+    <ClInclude Include="EddsDecoder.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
