@@ -12,30 +12,37 @@ CProgramMenu mainMenu;
 CEddsDecoder eddsDecoder;
 
 
-
 void GetFileName(char *pFileName, int sizeFileName)
 {
 	char pFN[256];
+	int result;
 
 	system("cls");
 	printf("\n\nTelemetria fájl megadása\n\n");
 
 	printf("Írja be a fájl nevét: ");
-	InputStr(pFN, 256);
-
-	if (eddsDecoder.SetFilename(pFN)==0) {
+	result = InputStr(pFN, 256);
+	if (result == 0) strcpy_s(pFN, 256, "c:\\t\\1.dat");
+	if (eddsDecoder.SetFilename(pFN) == 0) {
 		printf("\nA fájl megadva: %s\n", pFN);
 		strncpy_s(pFileName, sizeFileName, pFN, sizeFileName);
 	}
 	else {
 		printf("\nHiba a fájl megadásakor!\n");
 	}
-
-	_getch();
+	result = _getch();
 }
 
 
+void WriteBinary()
+{
+	int result;
 
+	system("cls");
+	result = eddsDecoder.ConvertToBinary();
+
+	result = _getch();
+}
 
 
 int main()
@@ -59,7 +66,7 @@ int main()
 		case 1: GetFileName(pFileName, 256);
 			break;
 		case 2: 
-			;
+			WriteBinary();
 			break;
 		}
 
