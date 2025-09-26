@@ -101,9 +101,36 @@ int CEddsDecoder::SetFilename(char* pFileName)
 	return 0;
 }
 
+
 // convert 2 Hex chars to 1 byte
-int CEddsDecoder::GetHexByte(BYTE *pBytesIn, BYTE *pByteOut, int nBytesIn)
+int CEddsDecoder::GetHexByte(BYTE* pBytesIn, BYTE* pByteOut, int nBytesIn)
 {
+	char hexB[3] = { 0,0,0 };
+	int c0 = -1, c1 = -1;
+	int valByte, charCounter, idx;
+
+	charCounter = 0;
+	idx = 0;
+	do {
+		memcpy(hexB, pBytesIn + charCounter, 2);
+		if ((isalnum(hexB[0]) == 0) || (isalnum(hexB[1]) == 0)) return -111;
+		_strupr_s(hexB);
+		if ((hexB[0] >= '0') && (hexB[0] <= '9')) c0 = hexB[0] - '0';
+		else {
+			if ((hexB[0] >= 'A') && (hexB[0] <= 'F')) c0 = hexB[0] - 'A' + 10;
+			else c0 = -1;
+		}
+		if ((hexB[1] >= '0') && (hexB[1] <= '9')) c1 = hexB[1] - '0';
+		else {
+			if ((hexB[1] >= 'A') && (hexB[1] <= 'F')) c1 = hexB[1] - 'A' + 10;
+			else c1 = -1;
+		}
+		if ((c0 < 0) || (c1 < 0)) return -112;
+		pByteOut[idx] = 16 * c0 + c1;
+		//if ((valB < 0) || (valB > 255)) return -111;
+		charCounter += 2;
+		idx++;
+	} while (charCounter < nBytesIn);
 	return 0;
 }
 
