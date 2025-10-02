@@ -24,6 +24,9 @@
     <ClCompile Include="EddsDecoder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PgmImage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="EDDS_Data_Decoding_Procedure.pptx" />
@@ -34,6 +37,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EddsDecoder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PgmImage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
