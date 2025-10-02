@@ -31,6 +31,7 @@
   <ItemGroup>
     <None Include="EDDS_Data_Decoding_Procedure.pptx" />
     <None Include="001_AFC_2024-10-07_2024-10-07.zip" />
+    <None Include="111_AFC_2025-03-12_2025-03-12.zip" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\MenuTest\MenuTest\ProgramMenu.h">
