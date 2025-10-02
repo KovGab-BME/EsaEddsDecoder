@@ -126,14 +126,17 @@
     <ClCompile Include="..\..\MenuTest\MenuTest\ProgramMenu.cpp" />
     <ClCompile Include="EddsDecoder.cpp" />
     <ClCompile Include="EsaEddsDecoder.cpp" />
+    <ClCompile Include="PgmImage.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="001_AFC_2024-10-07_2024-10-07.zip" />
+    <None Include="111_AFC_2025-03-12_2025-03-12.zip" />
     <None Include="EDDS_Data_Decoding_Procedure.pptx" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\MenuTest\MenuTest\ProgramMenu.h" />
     <ClInclude Include="EddsDecoder.h" />
+    <ClInclude Include="PgmImage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
