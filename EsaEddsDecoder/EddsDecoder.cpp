@@ -84,6 +84,9 @@ CEddsDecoder::CEddsDecoder()
 	m_pImageOut = new CPgmImage;
 	m_pImageOut->Init(1020, 1020);
 	m_imageNumber = 0;
+
+	int size = sizeof(EDDS_PACKET_TYPE);
+
 }
 
 
