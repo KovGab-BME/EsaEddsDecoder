@@ -9,7 +9,7 @@ typedef unsigned char BYTE;
 typedef unsigned short WORD;
 typedef unsigned long DWORD;
 
-//#pragma pack(push,1)					// tároljuk az adatokat bájtonként szorosan!
+#pragma pack(push,1)					// tároljuk az adatokat bájtonként szorosan!
 
 // EDDS raw csomag típus
 typedef struct tagEDDS_PACKET
@@ -18,7 +18,7 @@ typedef struct tagEDDS_PACKET
 	int sizePacket;		// csomag méret bájtban (hex formátumban kétszeres méretű a tárolás)
 	BYTE pData[2500];	// dekódolt csomag adatok (bináris formátumban)
 } EDDS_PACKET_TYPE;
-//#pragma pack(pop)						// tároljuk az adatokat optimalizáltan!
+#pragma pack(pop)						// tároljuk az adatokat optimalizáltan!
 
 // ESA EDDS dekóder	osztály
 // AFC navigációs képek dekódolása EDDS RAW csomagokból
